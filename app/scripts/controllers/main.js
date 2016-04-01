@@ -9,9 +9,10 @@
  */
 angular.module('appTaskBoardApp')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    var _this = this;
+    _this.titleName = "Column1";
+    _this.disable = true;
+    _this.toggleDisable = function(){
+      _this.disable = !_this.disable;
+      };
   });

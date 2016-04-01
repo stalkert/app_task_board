@@ -91,3 +91,22 @@ body {
     border-bottom: 0;
   }
 }
+
+#main {
+  min-width: 1980px;
+  min-height: 1200px;
+  background-color: #0079BF;
+  padding: 40px;
+  input {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 2em;
+    &:disabled {
+      border: none;
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 2em;
+    }
+  }
+}

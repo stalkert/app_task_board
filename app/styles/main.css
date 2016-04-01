@@ -8891,3 +8891,24 @@ body {
     border-bottom: 0;
   }
 }
+/* line 95, ../scss/main.scss */
+#main {
+  min-width: 1980px;
+  min-height: 1200px;
+  background-color: #0079BF;
+  padding: 40px;
+}
+/* line 100, ../scss/main.scss */
+#main input {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 2em;
+}
+/* line 105, ../scss/main.scss */
+#main input:disabled {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 2em;
+}
