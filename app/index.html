@@ -8,8 +8,8 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -24,12 +24,16 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div id="wrapper">
+
   <div id="wrapper-container" ng-controller="MainCtrl as mctrl">
     <div class="container">
       <div class="row">
         <div class="col-md-12" id="main">
-        <column ng-repeat="count in countColumn"></column>
+          <ul ng-sortable="{animation:150}">
+            <li ng-repeat="count in countColumn">
+            <column ></column>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="row">
@@ -37,10 +41,12 @@
           <button class="btn btn-default" ng-click="mctrl.addColumn();"> Add a list...</button>
         </div>
       </div>
+
     </div>
   </div>
-  <div id="footer"></div>
-</div>
+
+
+
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
@@ -72,6 +78,9 @@
 <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 <script src="bower_components/lodash/lodash.js"></script>
 <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+<script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+<script src="http://rubaxa.github.io/Sortable/ng-sortable.js"></script>
+
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -79,12 +88,12 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/bootstrap-colorpicker-module.js"></script>
 <script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/column-controller.js"></script>
-<script src="scripts/controllers/card-controller.js"></script>
+
 <script src="scripts/directives/focus-in-input.js"></script>
 <script src="scripts/directives/column-directive.js"></script>
 <script src="scripts/directives/card-directive.js"></script>
 <script src="scripts/factory/list-factory.js"></script>
+
 <!-- endbuild -->
 </body>
 </html>

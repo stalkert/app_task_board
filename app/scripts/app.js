@@ -18,16 +18,6 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'colorpicker.module'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    'colorpicker.module',
+    'ng-sortable'
+  ]);

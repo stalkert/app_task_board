@@ -8,7 +8,13 @@
     <span class="glyphicon glyphicon-remove column"> </span>
 
     <div class="panel-body">
-      <card focus-in-input-card ng-repeat="count in ctrl.countCard" count="count" remove-card="ctrl.removeCard" bgcolor="bgcolor" ></card>
+      <ul ng-sortable="{animation:150}">
+
+        <li ng-repeat="count in ctrl.countCard">
+          <card focus-in-input-card count="count" remove-card="ctrl.removeCard"
+                bgcolor="bgcolor"></card>
+        </li>
+      </ul>
       <button class="btn btn-default" ng-click="ctrl.addCard();">Add a card ...</button>
     </div>
   </div>

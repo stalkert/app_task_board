@@ -8798,22 +8798,13 @@ html, body, #wrapper {
 
 /* line 12, ../scss/main.scss */
 #wrapper-container {
+  background: #0079BF no-repeat 0 0 fixed;
   min-height: 100%;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-/* line 16, ../scss/main.scss */
-#footer {
-  margin-top: -20px;
-}
-
-/* line 19, ../scss/main.scss */
-#wrapper {
-  background-color: #0079BF;
-  padding: 40px;
-}
-
-/* line 27, ../scss/main.scss */
+/* line 23, ../scss/main.scss */
 #main input {
   border: none;
   background-color: transparent;
@@ -8821,7 +8812,7 @@ html, body, #wrapper {
   font-size: 2em;
   width: 85%;
 }
-/* line 33, ../scss/main.scss */
+/* line 29, ../scss/main.scss */
 #main input:disabled {
   border: none;
   background-color: transparent;
@@ -8829,17 +8820,26 @@ html, body, #wrapper {
   font-size: 2em;
   width: 85%;
 }
-/* line 42, ../scss/main.scss */
+/* line 38, ../scss/main.scss */
 #main .well input {
   border: none;
   background-color: transparent;
   font-size: 1em;
   width: 75%;
 }
-/* line 47, ../scss/main.scss */
+/* line 43, ../scss/main.scss */
 #main .well input:disabled {
   border: none;
   background-color: transparent;
   font-size: 1em;
   width: 75%;
+}
+
+/* line 53, ../scss/main.scss */
+.panel-body ul, #main ul {
+  padding-left: 0;
+}
+/* line 55, ../scss/main.scss */
+.panel-body ul li, #main ul li {
+  list-style-type: none;
 }

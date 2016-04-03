@@ -2,16 +2,13 @@
 angular.module('appTaskBoardApp')
   .directive('focusInInputColumn', function () {
     return function (scope, element) {
-      //debugger;
-      var column =angular.element(element);
+      var column = angular.element(element);
       var currentPencil = column.find('span.glyphicon-pencil.column');
-
       var currentRemove = column.find('span.glyphicon-remove.column');
       currentPencil.on('click', function () {
         column.find('input').focus();
       });
       currentRemove.on('click', function () {
-        //debugger;
         column.remove();
       });
     };
@@ -19,7 +16,7 @@ angular.module('appTaskBoardApp')
   .directive('focusInInputCard', function () {
     return function (scope, element) {
       //debugger;
-      var card =angular.element(element);
+      var card = angular.element(element);
       var currentPencil = card.find('span.glyphicon-pencil.card');
       var currentRemove = card.find('span.glyphicon-remove.card');
       var currentBgColor = card.find('span.glyphicon-tint.card');
@@ -28,10 +25,8 @@ angular.module('appTaskBoardApp')
       });
       currentRemove.on('click', function () {
         card.remove();
-
       });
       currentBgColor.on('click', function () {
-        //debugger;
         card.find('input[name=color]').focus();
       });
 
