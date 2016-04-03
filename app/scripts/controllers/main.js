@@ -1,18 +1,11 @@
 'use strict';
-
-/**
- * @ngdoc function
- * @name appTaskBoardApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the appTaskBoardApp
- */
 angular.module('appTaskBoardApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl',['List','$rootScope',function(List,$rootScope){
     var _this = this;
-    _this.titleName = "Column1";
-    _this.disable = true;
-    _this.toggleDisable = function(){
-      _this.disable = !_this.disable;
-      };
-  });
+    $rootScope.counterColumn = 1;
+    $rootScope.countColumn = [0];
+    _this.addColumn = List.addOneColumn;
+    //$rootScope.counterCard = 1;
+    //$rootScope.countCard = [0];
+    //_this.addCard = List.addOneCard;
+  }]);

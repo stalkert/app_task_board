@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="appTaskBoardApp">
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -8,43 +8,39 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-  <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/colorpicker.css">
   <!-- endbuild -->
 </head>
-<body ng-app="appTaskBoardApp">
+<body>
 <!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
-
-<div class="row">
-  <div class="col-xs-12" id="main" ng-controller="MainCtrl as ctrl">
-    <div class="col-xs-3">
-      <div class="panel panel-default panel-heading" focus-in-input>
-        <input type="text" name="title" value="{{ctrl.titleName}}"
-               ng-model="ctrl.titleName"
-               ng-blur="ctrl.toggleDisable()"
-               ng-disabled="ctrl.disable===true">
-        <span class="glyphicon glyphicon-pencil" ng-click="ctrl.toggleDisable()"></span>
-        <span class="glyphicon glyphicon-remove"> </span>
-
-        <div class="panel-body">
-          <div class="well">Card 1</div>
-          <div class="well">Card 2</div>
-          <button class="btn btn-default">Add a card ...</button>
+<div id="wrapper">
+  <div id="wrapper-container" ng-controller="MainCtrl as mctrl">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" id="main">
+        <column ng-repeat="count in countColumn"></column>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-default" ng-click="mctrl.addColumn();"> Add a list...</button>
         </div>
       </div>
     </div>
   </div>
+  <div id="footer"></div>
 </div>
-
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
@@ -58,13 +54,12 @@
   ga('create', 'UA-XXXXX-X');
   ga('send', 'pageview');
 </script>
-
+</body>
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -74,6 +69,7 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 <script src="bower_components/lodash/lodash.js"></script>
 <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
 <!-- endbower -->
@@ -81,8 +77,14 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
+<script src="scripts/bootstrap-colorpicker-module.js"></script>
 <script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/column-controller.js"></script>
+<script src="scripts/controllers/card-controller.js"></script>
 <script src="scripts/directives/focus-in-input.js"></script>
+<script src="scripts/directives/column-directive.js"></script>
+<script src="scripts/directives/card-directive.js"></script>
+<script src="scripts/factory/list-factory.js"></script>
 <!-- endbuild -->
 </body>
 </html>

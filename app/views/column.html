@@ -1,0 +1,15 @@
+<div class="col-md-4">
+  <div class="panel panel-default panel-heading" focus-in-input-column>
+    <input type="text" name="title" value="{{ctrl.titleName}}"
+           ng-model="ctrl.titleName"
+           ng-blur="ctrl.toggleDisable()"
+           ng-disabled="ctrl.disable===true">
+    <span class="glyphicon glyphicon-pencil column" ng-click="ctrl.toggleDisable()"></span>
+    <span class="glyphicon glyphicon-remove column"> </span>
+
+    <div class="panel-body">
+      <card focus-in-input-card ng-repeat="count in ctrl.countCard" count="count" remove-card="ctrl.removeCard" bgcolor="bgcolor" ></card>
+      <button class="btn btn-default" ng-click="ctrl.addCard();">Add a card ...</button>
+    </div>
+  </div>
+</div>

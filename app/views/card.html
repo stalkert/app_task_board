@@ -1,0 +1,17 @@
+<div class="well" style="background-color: {{ctrl2.bgcolor}};">
+  <input type="text" name="card" value="{{ctrl2.cardName}}"
+         ng-model="ctrl2.cardName"
+         ng-blur="ctrl2.toggleDisable()"
+         ng-disabled="ctrl2.disable===true"
+
+    >
+  <span class="glyphicon glyphicon-pencil card" ng-click="ctrl2.toggleDisable()"></span>
+  <span class="glyphicon glyphicon-tint card" ng-click="ctrl2.toggleDisableColor()">  </span>
+  <span class="glyphicon glyphicon-remove card"> </span>
+
+  <input type="text" name="color" style="color:{{ctrl2.bgcolor}}"
+         ng-model="ctrl2.bgcolor"
+         ng-blur="ctrl2.toggleDisableColor()"
+         ng-disabled="ctrl2.disableColor===true"
+         colorpicker>
+</div>
